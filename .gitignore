@@ -1,0 +1,11 @@
+.idea
+.vscode
+#排除.json文件
+*.json
+#排除txt
+*.txt
+#排除npy文件
+*.npy
+#排除xlsx文件
+*.xlsx
+
