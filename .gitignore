@@ -9,5 +9,16 @@
 #排除xlsx文件
 *.xlsx
 
+*.log
+
+*.aux
+
+*.pdf
+
+*.synctex.gz
+
+*.toc
+
+*.png
 
 
