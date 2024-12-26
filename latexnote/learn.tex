@@ -1,0 +1,126 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{threeparttable}%插入表格的
+\usepackage{threeparttable}%插入表格的脚注
+%%%
+\usepackage{float}%控制图片位置
+\usepackage{graphicx} %插入图片
+\usepackage{subfigure} %控制图片位置
+%%%
+\usepackage{amsmath}
+\usepackage{amssymb}
+%%%
+\usepackage{listings} %插入代码
+\usepackage{appendix} %插入附录
+
+\begin{document}
+\tableofcontents %自动生成目录
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}} %引用的格式
+\newpage %生成新的一页
+
+\section{一级标题}
+\hspace{2.65mm} %缩进
+这是文章内容
+\vspace{2mm} %段内间隔的控制
+
+\subsection{二级标题}
+
+\subsubsection{三级标题}
+
+
+
+
+\begin{itemize}
+    \item 无序列表1
+    \item 无序列表2
+    \item 无序列表3
+\end{itemize}
+
+
+\begin{enumerate}
+    \item 有序列表1
+    \item 有序列表2
+    \item 有序列表3
+\end{enumerate}
+
+
+\textbf{加粗} \\
+\textit{斜体} \\
+\underline{下划线} \\
+
+
+%插入单张图片
+
+\begin{figure}[H]
+\centering 
+%\includegraphics[width=6cm]{1.jpg}
+\caption{图片标题}
+\end{figure}
+
+% 多张图片
+\begin{figure}[H]
+
+\centering
+%\subfigure[图片1]{\includegraphics[width=3cm]{1.jpg}}
+%\subfigure[图片2]{\includegraphics[width=3cm]{1.jpg}}
+%\subfigure[图片3]{\includegraphics[width=3cm]{1.jpg}}
+\caption{图片标题}
+\end{figure}
+
+
+%带标号的公式
+\begin{equation}
+y=x^{2}+1
+\end{equation}
+
+%无标号的公式
+$$y=x^{2}+1$$
+
+%插入图表,标准的三线表
+
+\begin{table}[H]%这个H进行一个位置的设定
+\centering
+\caption{符号说明}%表格的标题
+\begin{tabular}{cc}%第一个C表示左边居中显示,
+    \hline %插入横线
+    \makebox[0.3\textwidth][c]{符号}  &  \makebox[0.4\textwidth][c]{意义} \\ \hline
+        $L_n$  & 经度\\ 
+        $L_a$  & 纬度\\ \hline
+\end{tabular}
+\begin{tablenotes}
+    \footnotesize
+    \item \textbf{注:由于篇幅有限,仅展示部分数据}
+\end{tablenotes}
+\end{table}
+
+
+%参考文献的插入
+这里引用参考文献\upcite{1}
+\begin{thebibliography}{9} %宽度为9
+    \bibitem{1} 姜启源,数学模型(第四版) [M] 北京 高等教育出版社 2011
+    \bibitem{2} 参考文献2
+\end{thebibliography}
+
+
+\newpage
+\begin{appendices}
+
+\section{二分法}
+\lstset{language=Python}
+\begin{lstlisting}
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+\end{lstlisting}
+
+\end{appendices}
+
+
+\end{document}
